@@ -1,0 +1,5 @@
+C:\Users\szuro\Dropbox\Development\CodeLouisville\Final Project\visual-studio\millie-the-bearded-lady-game\Millie\Millie.Game\bin\Debug\Millie.Game.dll
+C:\Users\szuro\Dropbox\Development\CodeLouisville\Final Project\visual-studio\millie-the-bearded-lady-game\Millie\Millie.Game\bin\Debug\Millie.Game.pdb
+C:\Users\szuro\Dropbox\Development\CodeLouisville\Final Project\visual-studio\millie-the-bearded-lady-game\Millie\Millie.Game\obj\Debug\Millie.Game.csprojResolveAssemblyReference.cache
+C:\Users\szuro\Dropbox\Development\CodeLouisville\Final Project\visual-studio\millie-the-bearded-lady-game\Millie\Millie.Game\obj\Debug\Millie.Game.dll
+C:\Users\szuro\Dropbox\Development\CodeLouisville\Final Project\visual-studio\millie-the-bearded-lady-game\Millie\Millie.Game\obj\Debug\Millie.Game.pdb

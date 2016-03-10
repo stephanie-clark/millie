@@ -1,0 +1,11 @@
+C:\Users\szuro\Dropbox\Development\CodeLouisville\Final Project\visual-studio\millie-the-bearded-lady-game\Millie\Millie.Console\bin\Debug\Millie.Console.exe.config
+C:\Users\szuro\Dropbox\Development\CodeLouisville\Final Project\visual-studio\millie-the-bearded-lady-game\Millie\Millie.Console\bin\Debug\Millie.Console.exe
+C:\Users\szuro\Dropbox\Development\CodeLouisville\Final Project\visual-studio\millie-the-bearded-lady-game\Millie\Millie.Console\bin\Debug\Millie.Console.pdb
+C:\Users\szuro\Dropbox\Development\CodeLouisville\Final Project\visual-studio\millie-the-bearded-lady-game\Millie\Millie.Console\obj\Debug\Millie.Console.csprojResolveAssemblyReference.cache
+C:\Users\szuro\Dropbox\Development\CodeLouisville\Final Project\visual-studio\millie-the-bearded-lady-game\Millie\Millie.Console\obj\Debug\Millie.Console.exe
+C:\Users\szuro\Dropbox\Development\CodeLouisville\Final Project\visual-studio\millie-the-bearded-lady-game\Millie\Millie.Console\obj\Debug\Millie.Console.pdb
+C:\Users\szuro\Dropbox\Development\CodeLouisville\Final Project\visual-studio\millie-the-bearded-lady-game\Millie\Millie.Console\bin\Debug\Millie.Game.dll
+C:\Users\szuro\Dropbox\Development\CodeLouisville\Final Project\visual-studio\millie-the-bearded-lady-game\Millie\Millie.Console\bin\Debug\Millie.Game.pdb
+C:\Users\szuro\Dropbox\Development\gihub\millie\Millie\Millie.Console\bin\Debug\Millie.Console.exe.config
+C:\Users\szuro\Dropbox\Development\gihub\millie\Millie\Millie.Console\obj\Debug\Millie.Console.exe
+C:\Users\szuro\Dropbox\Development\gihub\millie\Millie\Millie.Console\obj\Debug\Millie.Console.pdb
