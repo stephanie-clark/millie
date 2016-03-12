@@ -31,6 +31,8 @@ namespace Millie.Game
             return "Has not visited Tattoo Room";            
         }
 
+       
+
         /// <summary>
         /// Get a list of choices the player has in this room given a gamestate
         /// </summary>

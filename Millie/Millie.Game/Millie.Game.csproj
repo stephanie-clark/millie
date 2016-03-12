@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BarCarRoom.cs" />
     <Compile Include="GameState.cs" />
     <Compile Include="PlayerChoice.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

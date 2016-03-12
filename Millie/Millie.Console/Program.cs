@@ -11,20 +11,77 @@ namespace Millie.Console
         static void Main(string[] args)
         {
             var tattooRoom = new Game.TattooRoom();
+            var barCarRoom = new Game.BarCarRoom();
             var gameState = new Game.GameState();
 
-            var description = tattooRoom.GetDescription(gameState);
-            var choices = tattooRoom.GetChoices(gameState);
+            // Go to the bar car
+            System.Console.WriteLine(barCarRoom.GetDescription(gameState));
 
-            System.Console.WriteLine(description);
-            System.Console.WriteLine("Millie Has Tat: " + gameState.GotTattoo);
-            foreach (var choice in choices) System.Console.WriteLine(" - " + choice.Description);
+            //Display the choices
+            foreach (var choice in barCarRoom.GetChoices(gameState))
+            {
+                System.Console.WriteLine(" - " + choice.Description);
+            }
 
-            tattooRoom.ProcessChoice(gameState, 1);
-            description = tattooRoom.GetDescription(gameState);
-            System.Console.WriteLine("Millie Has Tat: " + gameState.GotTattoo);
-            System.Console.WriteLine(description);
-            
+            // Speak to the strongman
+            System.Console.WriteLine(barCarRoom.ProcessChoice(gameState, 1));
+
+            // Go to the tattoo room
+            System.Console.WriteLine(tattooRoom.GetDescription(gameState));
+
+            // Get a tattoo
+            System.Console.WriteLine(tattooRoom.ProcessChoice(gameState, 1));
+
+           
+
+            // Go to the bar car
+            System.Console.WriteLine(barCarRoom.GetDescription(gameState));
+
+            // Talk to the strongman again
+            System.Console.WriteLine(barCarRoom.ProcessChoice(gameState, 1));
+
+            //Display the choices
+            foreach (var choice in barCarRoom.GetChoices(gameState))
+            {
+                System.Console.WriteLine(" - " + choice.Description);
+            }
+
+            // Take a drink
+            System.Console.WriteLine(barCarRoom.ProcessChoice(gameState, 2));
+
+            // Pick up the flowers
+            System.Console.WriteLine(barCarRoom.ProcessChoice(gameState, 3));
+
+            //Display the choices
+            foreach (var choice in barCarRoom.GetChoices(gameState))
+            {
+                System.Console.WriteLine(" - " + choice.Description);
+            }
+
+            // Take another drink
+            System.Console.WriteLine(barCarRoom.ProcessChoice(gameState, 2));
+
+            //Display the choices
+            foreach (var choice in barCarRoom.GetChoices(gameState))
+            {
+                System.Console.WriteLine(" - " + choice.Description);
+            }
+
+            // Take another drink
+            System.Console.WriteLine(barCarRoom.ProcessChoice(gameState, 2));
+
+            //Display the choices
+            foreach (var choice in barCarRoom.GetChoices(gameState))
+            {
+                System.Console.WriteLine(" - " + choice.Description);
+            }
+
+            // Take another drink
+            System.Console.WriteLine(barCarRoom.ProcessChoice(gameState, 2));
+
+            // print out new gamestate stat (tattoo) and new room description
+            //System.Console.WriteLine(barCarRoom.GetDescription(gameState));
+
         }
     }
 }

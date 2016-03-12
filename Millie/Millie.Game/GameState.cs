@@ -13,6 +13,9 @@ namespace Millie.Game
         public int BeardLength { get; set; }
         public int NumberOfShotsTaken { get; set; }
         public bool GotTattoo { get; set; }
+
+        // BAR CAR EVENTS
+        public bool AskedAboutFlowers { get; set; }
         public bool HasFlowers { get; set; }
 
         // visited locations  
