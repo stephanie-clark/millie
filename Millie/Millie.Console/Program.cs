@@ -61,6 +61,17 @@ namespace Millie.Console
             // Take another drink
             System.Console.WriteLine(barCarRoom.ProcessChoice(gameState, 2));
 
+            // Go to the tattoo room
+            System.Console.WriteLine(tattooRoom.GetDescription(gameState));
+
+            // Get a tattoo
+            System.Console.WriteLine(tattooRoom.ProcessChoice(gameState, 1));
+
+
+
+            // Go to the bar car
+            System.Console.WriteLine(barCarRoom.GetDescription(gameState));
+
             //Display the choices
             foreach (var choice in barCarRoom.GetChoices(gameState))
             {

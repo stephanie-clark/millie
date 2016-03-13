@@ -16,16 +16,25 @@ namespace Millie.Game
             // Determine if we've previously visited
             var hasPreviouslyVisited = gameState.VisitedBarCar;
 
+            // Description of the bar car
+            var barCarDescription = "The bar car is beautiful. ";
+
             // Set that we've visited the room
             gameState.VisitedBarCar = true;
 
-            // if Millie has visited the Bar Car
-            if(hasPreviouslyVisited)
+            // if Millie has visited the Bar Car and has not picked up the flowers
+            if(hasPreviouslyVisited && !gameState.HasFlowers)
             {
-                return "You're back to the bar car!";
+                return barCarDescription + "Welcome back! There are still flowers everywhere. How strange.";
             }
 
-            return "Your first time into the bar car!";
+            // if Millie has visited the Bar Car and HAS picked up the flowers already
+            if(hasPreviouslyVisited && gameState.HasFlowers )
+            {
+                return barCarDescription + "Welcome back! THe flowers are gone.";
+            }
+
+            return barCarDescription + "This is your first time here. There are flowers everywhere. How strange.";
         }
 
         /// <summary>
@@ -35,17 +44,18 @@ namespace Millie.Game
         {
             var choices = new List<PlayerChoice>();
 
-            // Ask the Strongman about the flowers (if you don't have them)
+            // Ask the Strongman about the flowers (if you don't already have them)
             if (gameState.AskedAboutFlowers == false)
             {
                 var talkChoice = new PlayerChoice { Id = 1, Description = "Talk to the strongman about the flowers" };
                 choices.Add(talkChoice);
             }
 
+            // Ask for a drink
             var drinkChoice = new PlayerChoice { Id = 2, Description = "Ask the strongman for a drink" };
             choices.Add(drinkChoice);
 
-            // Choice to clean up the flowers
+            // Choice to clean up the flowers, but only if you've already asked about them
             if (gameState.AskedAboutFlowers && !gameState.HasFlowers)
             {
                 var cleanFlowers = new PlayerChoice { Id = 3, Description = "Clean up the flowers" };
@@ -76,28 +86,33 @@ namespace Millie.Game
             // Process if you take a drink
             if (choiceId == 2)
             {
+                // One Drink
                 if (gameState.NumberOfShotsTaken == 0)
                 { 
                     gameState.NumberOfShotsTaken++;
                     return "you took a drink. you have had " + gameState.NumberOfShotsTaken + " drink(s)";
                 }
 
-                if (gameState.NumberOfShotsTaken == 1)
+                // Two Drinks
+                else if (gameState.NumberOfShotsTaken == 1)
                 {
                     gameState.NumberOfShotsTaken++;
                     gameState.BeardLength++;
-                    return "you took a drink. you have had " + gameState.NumberOfShotsTaken + " drink(s). Your beard magically grows!";
+                    return "you took a drink. you have had " + gameState.NumberOfShotsTaken + " drink(s). Your beard magically grows! That's cool. You can stop drinking now.";
                 }
 
+                // Three drinks
                 else if (gameState.NumberOfShotsTaken == 2)
                 {
                     gameState.NumberOfShotsTaken++;
-                    return "you took a drink. you have had " + gameState.NumberOfShotsTaken + " drink(s). I wouldn't take another if I were you.";
+                    gameState.BeardLength++;
+                    return "you took a drink. you have had " + gameState.NumberOfShotsTaken + " drink(s). You beard grows again... but I wouldn't take another if I were you. seriously.";
                 }
 
-                else if (gameState.NumberOfShotsTaken == 3)
+                // Four drinks
+                else if (gameState.NumberOfShotsTaken >= 3)
                 {
-                    return "you are drunk. you lose.";
+                    return "you are drunk. you lose. can't say you weren't warned!";
                 }
 
                 else
