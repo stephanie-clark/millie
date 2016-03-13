@@ -15,7 +15,7 @@ namespace Millie.Console
             var gameState = new Game.GameState();
 
             // Start with a beardlentgh of 3
-            gameState.BeardLength = 0;
+            gameState.BeardLength = 2;
 
             // Go to the bar car
             System.Console.WriteLine(barCarRoom.GetDescription(gameState));

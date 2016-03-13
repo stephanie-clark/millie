@@ -11,8 +11,9 @@ namespace Millie.Game
      
         // character attributes 
         public int BeardLength { get; set; }
+        // TODO: Make sure beard length can't go above 5 or below 0. ALso starts at a 2.
         public int NumberOfShotsTaken { get; set; }
-        public bool GotTattoo { get; set; }
+        
 
         // BAR CAR EVENTS
         public bool AskedAboutFlowers { get; set; }
@@ -21,6 +22,7 @@ namespace Millie.Game
 
         // TATOO ROOM EVENTS
         public bool DrankElixer { get; set; }
+        public bool GotTattoo { get; set; }
 
         // visited locations  
         public int CurrentRoomID { get; set; }

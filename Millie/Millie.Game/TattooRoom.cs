@@ -30,9 +30,6 @@ namespace Millie.Game
                 return "You're too drunk to talk to. Here, drink this elixer. You'll feel better. " + tattooRoomDescription;
             }
 
-            // If Millie has already received a tattoo comment on it
-            if (gameState.GotTattoo) return tattooRoomDescription + "Cool tattoo! Hope you still like it!";
-
             // if Millie has visited the Tattood Lady
             if (hasPreviouslyVisited)
             {
@@ -51,8 +48,12 @@ namespace Millie.Game
         {
             var results = new List<PlayerChoice>();
 
-            var getTattooChoice = new PlayerChoice { Id = 1, Description = "Get a tattoo" };
-            results.Add(getTattooChoice);
+            // Get a tattoo, if Millie doesn't already have one
+            if (!gameState.GotTattoo)
+            { 
+                var getTattooChoice = new PlayerChoice { Id = 1, Description = "Get a tattoo" };
+                results.Add(getTattooChoice);
+            }
 
             var someOtherChoice = new PlayerChoice { Id = 2, Description = "Some other choice" };
             results.Add(someOtherChoice);
@@ -69,12 +70,12 @@ namespace Millie.Game
             {
                 if (gameState.GotTattoo)
                 {
-                    return "You already have one";
+                    return "You already have a tattoo, I won't give you two on the same day.";
                 }
                 else
                 {
                     gameState.GotTattoo = true;
-                    return "You got a tattoo!";
+                    return "You got a tattoo! It's lovely!";
                 }
             }
 
