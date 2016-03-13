@@ -18,6 +18,9 @@ namespace Millie.Game
         public bool AskedAboutFlowers { get; set; }
         public bool HasFlowers { get; set; }
 
+        // TATOO ROOM EVENTS
+        public bool DrankElixer { get; set; }
+
         // visited locations  
         public int CurrentRoomID { get; set; }
         public bool VisitedTattooRoom { get; set; }

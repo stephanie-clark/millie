@@ -78,8 +78,13 @@ namespace Millie.Console
                 System.Console.WriteLine(" - " + choice.Description);
             }
 
+
+
             // Take another drink
             System.Console.WriteLine(barCarRoom.ProcessChoice(gameState, 2));
+
+            // Go to the tatt room
+            System.Console.WriteLine(tattooRoom.GetDescription(gameState));
 
             //Display the choices
             foreach (var choice in barCarRoom.GetChoices(gameState))

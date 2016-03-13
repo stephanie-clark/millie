@@ -17,7 +17,7 @@ namespace Millie.Game
             var hasPreviouslyVisited = gameState.VisitedBarCar;
 
             // Description of the bar car
-            var barCarDescription = "The bar car is beautiful. ";
+            var barCarDescription = "You are in the bar car. ";
 
             // Set that we've visited the room
             gameState.VisitedBarCar = true;
@@ -51,9 +51,12 @@ namespace Millie.Game
                 choices.Add(talkChoice);
             }
 
-            // Ask for a drink
-            var drinkChoice = new PlayerChoice { Id = 2, Description = "Ask the strongman for a drink" };
-            choices.Add(drinkChoice);
+            // Ask for a drink (if you haven't had the elixer)
+            if (!gameState.DrankElixer)
+            {
+                var drinkChoice = new PlayerChoice { Id = 2, Description = "Ask the strongman for a drink" };
+                choices.Add(drinkChoice);
+            }
 
             // Choice to clean up the flowers, but only if you've already asked about them
             if (gameState.AskedAboutFlowers && !gameState.HasFlowers)
@@ -77,10 +80,10 @@ namespace Millie.Game
                 gameState.AskedAboutFlowers = true;
 
                 // If you have a tattoo - he likes it
-                if (gameState.GotTattoo) return "Cool tattoo!";
+                if (gameState.GotTattoo) return "Wow, cool tattoo! These flowers are from my girlfriend. We got into a fight and she's trying to say sorry. She's a magician though man. She can make flowers appear out of thin air. It kinda looses it's romanticness after a while.";
 
                 // Otherwise he just says hello
-                return "'Sup";
+                return "These flowers are from my girlfriend. We got into a fight and she's trying to say sorry. She's a magician though man. She can make flowers appear out of thin air. It kinda looses it's romanticness after a while.";
             }
 
             // Process if you take a drink

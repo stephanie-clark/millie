@@ -19,16 +19,27 @@ namespace Millie.Game
             // Set that we've visited the room
             gameState.VisitedTattooRoom = true;
 
+            // Give the general description
+            var tattooRoomDescription = "You are in the Tattoo Room. It is small and cozy. There's pretty art on the walls.";
+
+            // If millie is drunk
+            if (gameState.NumberOfShotsTaken == 3)
+            {
+                gameState.NumberOfShotsTaken = 0;
+                gameState.DrankElixer = true;
+                return "You're too drunk to talk to. Here, drink this elixer. You'll feel better. " + tattooRoomDescription;
+            }
+
             // If Millie has already received a tattoo comment on it
-            if (gameState.GotTattoo) return "Cool tattoo!";
+            if (gameState.GotTattoo) return tattooRoomDescription + "Cool tattoo! Hope you still like it!";
 
             // if Millie has visited the Tattood Lady
             if (hasPreviouslyVisited)
             {
-                return "Visited Tattoo Room";
+                return "Welcome back! " + tattooRoomDescription;
             }
 
-            return "Has not visited Tattoo Room";            
+            return tattooRoomDescription + "This is your first time here.";            
         }
 
        
