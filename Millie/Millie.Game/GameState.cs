@@ -16,6 +16,7 @@ namespace Millie.Game
 
         // BAR CAR EVENTS
         public bool AskedAboutFlowers { get; set; }
+        public bool AskedAboutArmWrestling { get; set; }
         public bool HasFlowers { get; set; }
 
         // TATOO ROOM EVENTS

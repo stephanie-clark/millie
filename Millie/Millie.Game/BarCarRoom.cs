@@ -65,6 +65,22 @@ namespace Millie.Game
                 choices.Add(cleanFlowers);
             }
 
+            // Choice to ask about arm wrestling, but only if you have at least a small beard and haven't asked about it yet
+            if (gameState.BeardLength >= 1 && !gameState.AskedAboutArmWrestling)
+            {
+                var askArmWrestle = new PlayerChoice { Id = 4, Description = "Ask the strongman about arm wrestling." };
+                choices.Add(askArmWrestle);
+            }
+
+            // If you've already asked about arm wresting, you can arm wrestle 
+            if (gameState.AskedAboutArmWrestling)
+            {
+                var ArmWrestle = new PlayerChoice { Id = 5, Description = "Arm wrestle the strongman!" };
+                choices.Add(ArmWrestle);
+            }
+
+
+
             return choices;
         }
 
@@ -73,7 +89,7 @@ namespace Millie.Game
         /// </summary>
         public override string ProcessChoice(GameState gameState, int choiceId)
         {
-            // Process talking to the strongman
+            // Process talking to the strongman about the flowers
             if (choiceId == 1)
             {
                 // Note that you'va asked about the flowers
@@ -129,6 +145,29 @@ namespace Millie.Game
             {
                 gameState.HasFlowers = true;
                 return "you pick up the flowers";
+                
+            }
+
+            // Process if you ask about arm wrestling
+            if (choiceId == 4)
+            {
+                gameState.AskedAboutArmWrestling = true;
+                return "'ARE YOU SURE? I NEVER LOSE!'  'I'll let you cut off my beard if I win!' 'Are you really really sure?'";
+            }
+
+            if (choiceId == 5)
+            {
+                if(gameState.BeardLength >= 2)
+                {
+                    gameState.BeardLength = gameState.BeardLength - 2;
+                    return "Strongman wins and cuts off your beard.";
+                }
+                else if(gameState.BeardLength <= 1)
+                {
+                    gameState.BeardLength = gameState.BeardLength - 1;
+                    return "Strongman wins and cuts off your beard.";
+                }
+                
                 
             }
 

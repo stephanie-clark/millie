@@ -14,6 +14,9 @@ namespace Millie.Console
             var barCarRoom = new Game.BarCarRoom();
             var gameState = new Game.GameState();
 
+            // Start with a beardlentgh of 3
+            gameState.BeardLength = 0;
+
             // Go to the bar car
             System.Console.WriteLine(barCarRoom.GetDescription(gameState));
 
@@ -48,6 +51,7 @@ namespace Millie.Console
 
             // Take a drink
             System.Console.WriteLine(barCarRoom.ProcessChoice(gameState, 2));
+            System.Console.WriteLine("Your beard length is: " + gameState.BeardLength);
 
             // Pick up the flowers
             System.Console.WriteLine(barCarRoom.ProcessChoice(gameState, 3));
@@ -60,6 +64,7 @@ namespace Millie.Console
 
             // Take another drink
             System.Console.WriteLine(barCarRoom.ProcessChoice(gameState, 2));
+            System.Console.WriteLine("Your beard length is: " + gameState.BeardLength);
 
             // Go to the tattoo room
             System.Console.WriteLine(tattooRoom.GetDescription(gameState));
@@ -82,6 +87,7 @@ namespace Millie.Console
 
             // Take another drink
             System.Console.WriteLine(barCarRoom.ProcessChoice(gameState, 2));
+            System.Console.WriteLine("Your beard length is: " + gameState.BeardLength);
 
             // Go to the tatt room
             System.Console.WriteLine(tattooRoom.GetDescription(gameState));
@@ -92,8 +98,22 @@ namespace Millie.Console
                 System.Console.WriteLine(" - " + choice.Description);
             }
 
+            // Ask about arm wrestling
+            System.Console.WriteLine(barCarRoom.ProcessChoice(gameState, 4));
+
+            //Display the choices
+            foreach (var choice in barCarRoom.GetChoices(gameState))
+            {
+                System.Console.WriteLine(" - " + choice.Description);
+            }
+
+            // Arm wrestle
+            System.Console.WriteLine(barCarRoom.ProcessChoice(gameState, 5));
+            System.Console.WriteLine("Your beard length is: " + gameState.BeardLength);
+
             // Take another drink
             System.Console.WriteLine(barCarRoom.ProcessChoice(gameState, 2));
+            System.Console.WriteLine("Your beard length is: " + gameState.BeardLength);
 
             // print out new gamestate stat (tattoo) and new room description
             //System.Console.WriteLine(barCarRoom.GetDescription(gameState));
