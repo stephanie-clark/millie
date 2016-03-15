@@ -1,0 +1,23 @@
+.millie-header {
+  height: 60px;
+  width: 100%;
+  line-height: 60px;
+  background: #AAA;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: #c4b359;
+  border: 0;
+  border-radius: 0;
+}
+
+
+
+#sidebar-wrapper {
+  margin-top: 60px;
+}
+
+#page-content-wrapper {
+  padding-top: 60px !important;
+}
