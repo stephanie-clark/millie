@@ -1,15 +1,47 @@
+/* 
+red #e2323b
+tan #eeaf7d
+brown #503722
+grey #1f1f1f
+
+font-family: 'Vast Shadow', cursive;
+font-family: 'Oswald', sans-serif; 300, 400, 700
+font-family: 'Josefin Slab', serif; 300, 400, 700
+*/
+
+body {
+  font-family: 'Josefin Slab', serif;
+}
+
+.millie-header h1 {
+  font-family: 'Vast Shadow', cursive;
+  text-transform: uppercase;
+  margin: 10px 0px;
+  padding: 0;
+}
+
+.millie-header h1 span {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  font-size: 50%;
+}
+
 .millie-header {
   height: 60px;
   width: 100%;
   line-height: 60px;
-  background: #AAA;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
-  background-color: #c4b359;
+  background-color: #d4c56d;
   border: 0;
   border-radius: 0;
+  color: #fff;
+}
+
+.millie-header a {
+  color: #fff !Important;
 }
 
 
