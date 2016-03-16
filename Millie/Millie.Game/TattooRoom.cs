@@ -89,7 +89,7 @@ namespace Millie.Game
                 else
                 {
                     gameState.AskAboutTattoo = true;
-                    return "Where do you want it?";
+                    return "I think you would look great with a tattoo on your neck! Or maybe your arm. Either way, you would be lovely.";
                 }
             }
 

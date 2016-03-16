@@ -71,8 +71,6 @@ namespace Millie.Game
                 var approachGoats = new PlayerChoice { Id = 4, Description = "Go pet the goats!" };
             }
 
-
-
             throw new NotImplementedException();
         }
 
@@ -95,7 +93,6 @@ namespace Millie.Game
             {
                 // Note that you'va asked about the goats
                 gameState.AskAboutGoats = true;
-
                 return "The lions are sick so I'm practicing with goats! They are hungry, so be careful if you pet them!";
    
             }

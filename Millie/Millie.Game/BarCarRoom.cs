@@ -95,8 +95,24 @@ namespace Millie.Game
                 // Note that you'va asked about the flowers
                 gameState.AskedAboutFlowers = true;
 
+                var explainFlowers = "These flowers are from my girlfriend. We got into a fight and she's trying to say sorry. She's a magician though man. She can make flowers appear out of thin air. It kinda looses it's romanticness after a while.";
+
+                if (gameState.ApproachGoats && gameState.GotTattoo)
+                {
+                    return "You smell like goats... but I like your tattoo!" + explainFlowers;
+                }
+
                 // If you have a tattoo - he likes it
-                if (gameState.GotTattoo) return "Wow, cool tattoo! These flowers are from my girlfriend. We got into a fight and she's trying to say sorry. She's a magician though man. She can make flowers appear out of thin air. It kinda looses it's romanticness after a while.";
+                if (gameState.GotTattoo)
+                {
+                    return "Wow, cool tattoo! " + explainFlowers;
+                }
+
+                // If you have been near the goats, you smell bad
+                if (gameState.ApproachGoats)
+                {
+                    return "You smell like goats. " + explainFlowers;
+                }
 
                 // Otherwise he just says hello
                 return "These flowers are from my girlfriend. We got into a fight and she's trying to say sorry. She's a magician though man. She can make flowers appear out of thin air. It kinda looses it's romanticness after a while.";
@@ -109,7 +125,7 @@ namespace Millie.Game
                 if (gameState.NumberOfShotsTaken == 0)
                 { 
                     gameState.NumberOfShotsTaken++;
-                    return "you took a drink. you have had " + gameState.NumberOfShotsTaken + " drink(s)";
+                    return "you took a drink. you have had " + gameState.NumberOfShotsTaken + " drink";
                 }
 
                 // Two Drinks
@@ -117,7 +133,7 @@ namespace Millie.Game
                 {
                     gameState.NumberOfShotsTaken++;
                     gameState.BeardLength++;
-                    return "you took a drink. you have had " + gameState.NumberOfShotsTaken + " drink(s). Your beard magically grows! That's cool. You can stop drinking now.";
+                    return "you took a drink. you have had " + gameState.NumberOfShotsTaken + " drinks. Your beard magically grows! That's cool. You can stop drinking now.";
                 }
 
                 // Three drinks
@@ -125,7 +141,7 @@ namespace Millie.Game
                 {
                     gameState.NumberOfShotsTaken++;
                     gameState.BeardLength++;
-                    return "you took a drink. you have had " + gameState.NumberOfShotsTaken + " drink(s). You beard grows again... but I wouldn't take another if I were you. seriously.";
+                    return "you took a drink. you have had " + gameState.NumberOfShotsTaken + " drinks. You beard grows again... but I wouldn't take another if I were you. seriously.";
                 }
 
                 // Four drinks

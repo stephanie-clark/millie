@@ -26,6 +26,9 @@ namespace Millie.Console
                 System.Console.WriteLine(" - " + choice.Description);
             }
 
+            // Approached goats 
+            gameState.ApproachGoats = true;
+
             // Speak to the strongman
             System.Console.WriteLine(barCarRoom.ProcessChoice(gameState, 1));
 
@@ -67,6 +70,8 @@ namespace Millie.Console
 
             // Go to the bar car
             System.Console.WriteLine(barCarRoom.GetDescription(gameState));
+
+           
 
             // Talk to the strongman again
             System.Console.WriteLine(barCarRoom.ProcessChoice(gameState, 1));
