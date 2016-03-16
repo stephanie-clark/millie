@@ -20,7 +20,7 @@ namespace Millie.Game
             gameState.VisitedTattooRoom = true;
 
             // Give the general description
-            var tattooRoomDescription = "You are in the Tattoo Room. It is small and cozy. There's pretty art on the walls.";
+            var tattooRoomDescription = "You are in the Tattoo Room. It is small and cozy. There's pretty art on the walls. There is a hookah sitting next to the tattooed lady.";
 
             // If millie is drunk
             if (gameState.NumberOfShotsTaken == 3)
@@ -49,14 +49,28 @@ namespace Millie.Game
             var results = new List<PlayerChoice>();
 
             // Get a tattoo, if Millie doesn't already have one
-            if (!gameState.GotTattoo)
+            if (!gameState.GotTattoo && !gameState.AskAboutTattoo)
             { 
-                var getTattooChoice = new PlayerChoice { Id = 1, Description = "Get a tattoo" };
+                var getTattooChoice = new PlayerChoice { Id = 1, Description = "Ask about a tattoo" };
                 results.Add(getTattooChoice);
             }
 
-            var someOtherChoice = new PlayerChoice { Id = 2, Description = "Some other choice" };
-            results.Add(someOtherChoice);
+            if (gameState.AskAboutTattoo && !gameState.GotTattoo)
+            {
+
+                var getNeckTattoo = new PlayerChoice { Id = 2, Description = "Get a neck tattoo" };
+                results.Add(getNeckTattoo);
+
+                var getArmTattoo = new PlayerChoice { Id = 3, Description = "Get an arm tattoo" };
+                results.Add(getArmTattoo);
+
+            }
+
+            if (!gameState.UsedHookah)
+            {
+                var tryTheHookah = new PlayerChoice { Id = 4, Description = "Try the hookah" };
+                results.Add(tryTheHookah);
+            }
 
             return results;
         }
@@ -74,13 +88,34 @@ namespace Millie.Game
                 }
                 else
                 {
-                    gameState.GotTattoo = true;
-                    return "You got a tattoo! It's lovely!";
+                    gameState.AskAboutTattoo = true;
+                    return "Where do you want it?";
                 }
             }
 
+            // You get a neck tattoo
             if (choiceId == 2)
-                return "Some other result";
+            {
+                gameState.GotTattoo = true;
+                gameState.GotNeckTattoo = true;
+                gameState.BeardLength--;
+                return "Awesome, look at this beautiful tattoo! We must cut your beard so you can show it off!";
+            }
+
+            // You get an arm tattoo
+            if (choiceId == 3)
+            {
+                gameState.GotTattoo = true;
+                gameState.GotArmTattoo = true;
+                return "Awesome, look at this beautiful tattoo!";
+            }
+
+            if (choiceId == 4)
+            {
+                gameState.BeardLength++;
+                gameState.UsedHookah = true;
+                return "You take a hit off the hookah. Your beard grows!";
+            }
 
             throw new Exception("Something weird happened");
         }

@@ -32,10 +32,38 @@ namespace Millie.Console
             // Go to the tattoo room
             System.Console.WriteLine(tattooRoom.GetDescription(gameState));
 
-            // Get a tattoo
+            //Display the TATTO choices
+            foreach (var choice in tattooRoom.GetChoices(gameState))
+            {
+                System.Console.WriteLine(" - " + choice.Description);
+            }
+
+            // Ask about a tattoo
             System.Console.WriteLine(tattooRoom.ProcessChoice(gameState, 1));
 
-           
+            // Display TATT choices
+            foreach (var choice in tattooRoom.GetChoices(gameState))
+            {
+                System.Console.WriteLine(" - " + choice.Description);
+            }
+
+            System.Console.WriteLine("Your beard length is: " + gameState.BeardLength);
+
+            // Get a neck tattoo
+            System.Console.WriteLine(tattooRoom.ProcessChoice(gameState, 2));
+
+            System.Console.WriteLine("Your beard length is: " + gameState.BeardLength);
+
+            // Take a puff from the hookah
+            System.Console.WriteLine(tattooRoom.ProcessChoice(gameState, 4));
+
+            System.Console.WriteLine("Your beard length is: " + gameState.BeardLength);
+
+            // Display TATT choices
+            foreach (var choice in tattooRoom.GetChoices(gameState))
+            {
+                System.Console.WriteLine(" - " + choice.Description);
+            }
 
             // Go to the bar car
             System.Console.WriteLine(barCarRoom.GetDescription(gameState));
