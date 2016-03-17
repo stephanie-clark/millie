@@ -11,6 +11,7 @@ font-family: 'Josefin Slab', serif; 300, 400, 700
 
 body {
   font-family: 'Josefin Slab', serif;
+  background: #efefef;
 }
 
 .millie-header h1 {
@@ -18,21 +19,18 @@ body {
   text-transform: uppercase;
   margin: 10px 0px;
   padding: 0;
+  text-align: center;
 }
 
 .millie-header h1 span {
   font-family: 'Oswald', sans-serif;
   font-weight: 300;
   font-size: 50%;
+  
 }
 
 .millie-header {
   height: 60px;
-  width: 100%;
-  line-height: 60px;
-  position: fixed;
-  top: 0;
-  left: 0;
   z-index: 100;
   background-color: #d4c56d;
   border: 0;
@@ -51,5 +49,71 @@ body {
 }
 
 #page-content-wrapper {
-  padding-top: 60px !important;
+  padding-top: 80px !important;
+  
+}
+
+/* room navigation buttons */
+
+.room-nav {
+  font-family: 'Vast Shadow', cursive;
+  display: block;
+  background: #999;
+  text-align: center;
+  padding: 20px;
+  color: #fff;
+  height: 60px;
+}
+
+.room-nav::after {
+  content: '';
+  position: absolute;
+  left: 9%;
+  top: 10%;
+  right: 9%;
+  bottom: 10%;
+  border: 1px solid #fff;
+}
+
+.room-nav::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 30px;
+  background: #fff;
+  left: 50%;
+  right: 50%;
+  top: 60px; 
+}
+
+.room-nav.barcar {
+  background: #e2323b;
+}
+
+.room-nav.tattooparlor {
+  background: #eeaf7d;
+}
+
+.room-nav.maintent {
+  background: #503722;
+}
+
+/* story */
+
+.story-content {
+  display: block;
+  background: #fff;
+  padding: 20px;
+  margin-top: 25px;
+  
+}
+
+/* sidebar */
+
+.sidebar-photo {
+  
+  width: 250px;
+  height: 200px;
+  /*background-image: url(../img/beardedlady.png);*/
+  border-top: 0px #000 solid;
 }
