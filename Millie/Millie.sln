@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Millie.Game", "Millie.Game\Millie.Game.csproj", "{E1570FD5-D911-45AE-8544-7AB3587191EC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Millie.Console", "Millie.Console\Millie.Console.csproj", "{2B4F473E-C4B0-4EE4-BCCE-3A54D976D51B}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Millie.Web", "Millie.Web\Millie.Web.xproj", "{EDFA1183-9835-41FE-8E95-B708BA12FEF8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{2B4F473E-C4B0-4EE4-BCCE-3A54D976D51B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B4F473E-C4B0-4EE4-BCCE-3A54D976D51B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B4F473E-C4B0-4EE4-BCCE-3A54D976D51B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDFA1183-9835-41FE-8E95-B708BA12FEF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDFA1183-9835-41FE-8E95-B708BA12FEF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDFA1183-9835-41FE-8E95-B708BA12FEF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDFA1183-9835-41FE-8E95-B708BA12FEF8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

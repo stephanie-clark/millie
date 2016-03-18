@@ -8,3 +8,8 @@ C:\Users\szuro\Dropbox\Development\gihub\millie\Millie\Millie.Game\bin\Debug\Mil
 C:\Users\szuro\Dropbox\Development\gihub\millie\Millie\Millie.Game\obj\Debug\Millie.Game.csprojResolveAssemblyReference.cache
 C:\Users\szuro\Dropbox\Development\gihub\millie\Millie\Millie.Game\obj\Debug\Millie.Game.dll
 C:\Users\szuro\Dropbox\Development\gihub\millie\Millie\Millie.Game\obj\Debug\Millie.Game.pdb
+C:\GitHub\millie\Millie\Millie.Game\bin\Debug\Millie.Game.dll
+C:\GitHub\millie\Millie\Millie.Game\bin\Debug\Millie.Game.pdb
+C:\GitHub\millie\Millie\Millie.Game\obj\Debug\Millie.Game.csprojResolveAssemblyReference.cache
+C:\GitHub\millie\Millie\Millie.Game\obj\Debug\Millie.Game.dll
+C:\GitHub\millie\Millie\Millie.Game\obj\Debug\Millie.Game.pdb

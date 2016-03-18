@@ -14,3 +14,11 @@ C:\Users\szuro\Dropbox\Development\gihub\millie\Millie\Millie.Console\bin\Debug\
 C:\Users\szuro\Dropbox\Development\gihub\millie\Millie\Millie.Console\bin\Debug\Millie.Game.dll
 C:\Users\szuro\Dropbox\Development\gihub\millie\Millie\Millie.Console\bin\Debug\Millie.Game.pdb
 C:\Users\szuro\Dropbox\Development\gihub\millie\Millie\Millie.Console\obj\Debug\Millie.Console.csprojResolveAssemblyReference.cache
+C:\GitHub\millie\Millie\Millie.Console\bin\Debug\Millie.Console.exe.config
+C:\GitHub\millie\Millie\Millie.Console\obj\Debug\Millie.Console.exe
+C:\GitHub\millie\Millie\Millie.Console\obj\Debug\Millie.Console.pdb
+C:\GitHub\millie\Millie\Millie.Console\bin\Debug\Millie.Console.exe
+C:\GitHub\millie\Millie\Millie.Console\bin\Debug\Millie.Console.pdb
+C:\GitHub\millie\Millie\Millie.Console\bin\Debug\Millie.Game.dll
+C:\GitHub\millie\Millie\Millie.Console\bin\Debug\Millie.Game.pdb
+C:\GitHub\millie\Millie\Millie.Console\obj\Debug\Millie.Console.csprojResolveAssemblyReference.cache
