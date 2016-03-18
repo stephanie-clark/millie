@@ -103,6 +103,7 @@ namespace Millie.Game
                 // If you have the flowers, the goats eat the flowers
                 if (gameState.HasFlowers)
                 {
+                    gameState.HasFlowers = false;
                     return "The goats notice the flowers in your beard and eat them!";
                 }
 
