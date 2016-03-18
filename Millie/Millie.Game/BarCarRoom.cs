@@ -79,8 +79,6 @@ namespace Millie.Game
                 choices.Add(ArmWrestle);
             }
 
-
-
             return choices;
         }
 
@@ -115,7 +113,7 @@ namespace Millie.Game
                 }
 
                 // Otherwise he just says hello
-                return "These flowers are from my girlfriend. We got into a fight and she's trying to say sorry. She's a magician though man. She can make flowers appear out of thin air. It kinda looses it's romanticness after a while.";
+                return explainFlowers;
             }
 
             // Process if you take a drink
@@ -183,8 +181,7 @@ namespace Millie.Game
                     gameState.BeardLength = gameState.BeardLength - 1;
                     return "Strongman wins and cuts off your beard.";
                 }
-                
-                
+                  
             }
 
             // Unsupported choice
