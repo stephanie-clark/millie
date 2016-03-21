@@ -1,0 +1,19 @@
+﻿@model Millie.Web.Models.TattooRoomViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Tattoo Room</h2>
+
+Description:
+<p>@Model.Description</p>
+
+Choices:
+@foreach (var choice in Model.Choices)
+{
+    <ul>
+        <li><a href="#">@choice.Description</a></li>
+    </ul>
+}
