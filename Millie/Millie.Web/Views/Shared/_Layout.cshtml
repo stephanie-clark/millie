@@ -25,7 +25,9 @@
                     <li>@Html.ActionLink("Main Tent", "Index", "MainTent")</li>
                     <li>@Html.ActionLink("Top of the Trapeze", "Index", "Trapeze")</li>
                     <li>@Html.ActionLink("Reset", "ResetGameState", "Home")</li>
-                    <li></li>
+                    <li>
+
+                    </li>
 
                 </ul>
                 @Html.Partial("_LoginPartial")
@@ -34,6 +36,7 @@
     </div>
     <div class="container body-content">
         @RenderBody()
+        @{ Html.RenderAction("Status", "Beard"); }
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>

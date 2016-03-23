@@ -12,12 +12,15 @@ namespace Millie.Web.Controllers
         {
 
             // New up the game state and room
-            Game.GameState gameState = Helpers.GameStateStorage.GetGameState(HttpContext);
+            Game.GameState gameState = Helpers.GameStateStorage.GetGameState();
             Game.TattooRoom tattooRoom = new Game.TattooRoom();
 
             // Build up a view model
             var viewModel = new Models.TattooRoomViewModel();
             viewModel.Description = tattooRoom.GetDescription(gameState);
+
+            // Store the game state
+            Helpers.GameStateStorage.StoreGameState(gameState);
 
             // Get the choices view model
             List<Game.PlayerChoice> choices = tattooRoom.GetChoices(gameState);
@@ -36,13 +39,13 @@ namespace Millie.Web.Controllers
         {
             // Get the game state and the room
             var tattooRoom = new Game.TattooRoom();
-            var gameState = Helpers.GameStateStorage.GetGameState(HttpContext);
+            var gameState = Helpers.GameStateStorage.GetGameState();
 
             // Process the choice
             var result = tattooRoom.ProcessChoice(gameState, choiceId);
 
             // Store the game state back in cache
-            Helpers.GameStateStorage.StoreGameState(HttpContext, gameState);
+            Helpers.GameStateStorage.StoreGameState(gameState);
 
             // Store the result in the view bag
             ViewBag.ProcessChoiceResponse = result;

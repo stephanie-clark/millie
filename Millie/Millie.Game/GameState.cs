@@ -8,7 +8,11 @@ namespace Millie.Game
 {
     public class GameState
     {
-     
+        public GameState()
+        {
+            BeardLength = 2;
+        }
+
         // character attributes 
         public int BeardLength { get; set; }
         // TODO: Make sure beard length can't go above 5 or below 0. ALso starts at a 2.

@@ -82,3 +82,6 @@ C:\Users\szuro\Dropbox\Development\gihub\millie\Millie\Millie.Web\obj\Debug\Mill
 C:\Users\szuro\Dropbox\Development\gihub\millie\Millie\Millie.Web\obj\Debug\Millie.Web.pdb
 C:\Users\szuro\Dropbox\Development\gihub\millie\Millie\Millie.Web\bin\Millie.Game.dll
 C:\Users\szuro\Dropbox\Development\gihub\millie\Millie\Millie.Web\bin\Millie.Game.pdb
+C:\Users\szuro\Dropbox\Development\gihub\millie\Millie\Millie.Web\bin\Dapper.dll
+C:\Users\szuro\Dropbox\Development\gihub\millie\Millie\Millie.Web\bin\Dapper.pdb
+C:\Users\szuro\Dropbox\Development\gihub\millie\Millie\Millie.Web\bin\Dapper.xml

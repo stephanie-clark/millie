@@ -44,6 +44,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=1.40.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.42\lib\net45\Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -197,6 +201,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BarCarController.cs" />
+    <Compile Include="Controllers\BeardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MainTentController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -208,6 +213,7 @@
     <Compile Include="Helpers\GameStateStorage.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BarCarViewModel.cs" />
+    <Compile Include="Models\BeardStatusViewModel.cs" />
     <Compile Include="Models\MainTentViewModel.cs" />
     <Compile Include="Models\PlayerChoiceViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -218,6 +224,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Database.mdf" />
+    <Content Include="App_Data\Database_log.ldf">
+      <DependentUpon>Database.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -281,10 +291,9 @@
     <Content Include="Views\TattooRoom\Index.cshtml" />
     <Content Include="Views\MainTent\Index.cshtml" />
     <Content Include="Views\Trapeze\Index.cshtml" />
+    <Content Include="Views\Beard\Status.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

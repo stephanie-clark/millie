@@ -12,12 +12,15 @@ namespace Millie.Web.Controllers
         public ActionResult Index()
         {
             // New up the game state and room
-            Game.GameState gameState = Helpers.GameStateStorage.GetGameState(HttpContext);
+            Game.GameState gameState = Helpers.GameStateStorage.GetGameState();
             Game.MainTentRoom mainTentRoom = new Game.MainTentRoom();
 
             // Build up a view model
             var viewModel = new Models.MainTentViewModel();
             viewModel.Description = mainTentRoom.GetDescription(gameState);
+
+            // Store the game state
+            Helpers.GameStateStorage.StoreGameState(gameState);
 
             // Get the choices view model
             List<Game.PlayerChoice> choices = mainTentRoom.GetChoices(gameState);
@@ -36,13 +39,13 @@ namespace Millie.Web.Controllers
         {
             // Get the game state and the room
             var mainTentRoom = new Game.MainTentRoom();
-            var gameState = Helpers.GameStateStorage.GetGameState(HttpContext);
+            var gameState = Helpers.GameStateStorage.GetGameState();
 
             // Process the choice
             var result = mainTentRoom.ProcessChoice(gameState, choiceId);
 
             // Store the game state back in cache
-            Helpers.GameStateStorage.StoreGameState(HttpContext, gameState);
+            Helpers.GameStateStorage.StoreGameState(gameState);
 
             // Store the result in the view bag
             ViewBag.ProcessChoiceResponse = result;
