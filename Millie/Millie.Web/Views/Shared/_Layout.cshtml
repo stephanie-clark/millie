@@ -4,12 +4,171 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Vast+Shadow|Oswald:400,300,700|Josefin+Slab:400,300,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top millie-header">
+        <div class="container-fluid">
+
+            <div class="row">
+
+                <div class="col-xs-2">
+
+                    <a href="#menu-toggle" id="menu-toggle">Toggle Stats</a>
+                </div>
+
+                <div class="col-xs-8">
+                    <h1>
+                        Millie <span>the</span> Bearded Lady
+                    </h1>
+                </div>
+
+                <div class="col-xs-2">
+
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header page-scroll">
+
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                    </button>
+
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="hidden">
+                                <a href="#page-top"></a>
+                            </li>
+                            <li class="page-scroll">
+                                <div class="dropdown">
+                                    <a class="dropdown-toggle" type="button" data-toggle="dropdown">
+                                        Options
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>@Html.Partial("_LoginPartial")</li>
+                                        <li>@Html.ActionLink("Reset", "ResetGameState", "Home")</li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+
+    <div id="wrapper">
+
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+
+            <div class="sidebar-photo ">
+                <img src="~/Content/images/beardedlady.png" />
+            </div>
+
+            <div class="sidebar-stat">
+                <p>@{ Html.RenderAction("Status", "Beard"); }</p>
+            </div>
+            <div class="sidebar-stat">
+                <p>Inventory:</p>
+            </div>
+
+
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+
+            <!-- Start Room Navigation -->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="room-nav barcar">
+                            @Html.ActionLink("Bar Car", "Index", "BarCar")
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="room-nav tattooparlor">
+                            @Html.ActionLink("Tattoo Room", "Index", "TattooRoom")
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="room-nav maintent">
+                            @Html.ActionLink("Main Tent", "Index", "MainTent")
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="room-nav final">
+                            @Html.ActionLink("The Trapeze", "Index", "Trapeze")
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Room Navigation -->
+
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-lg-12">
+                        <div class="story-content">
+                                                      
+                                @RenderBody()
+                        
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+
+
+<!--   <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -20,31 +179,15 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Bar Car", "Index", "BarCar")</li>
-                    <li>@Html.ActionLink("Tattoo Room", "Index", "TattooRoom")</li>
-                    <li>@Html.ActionLink("Main Tent", "Index", "MainTent")</li>
-                    <li>@Html.ActionLink("Top of the Trapeze", "Index", "Trapeze")</li>
-                    <li>@Html.ActionLink("Reset", "ResetGameState", "Home")</li>
-                    <li>
-
-                    </li>
-
+                    
                 </ul>
-                @Html.Partial("_LoginPartial")
+               
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        @{ Html.RenderAction("Status", "Beard"); }
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+    
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+   
+    -->
 </body>
 </html>

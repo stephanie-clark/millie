@@ -22,3 +22,268 @@ select,
 textarea {
     max-width: 280px;
 }
+
+
+/* CUSTOM MILLIE GAME CSS */
+
+/* SIDEBAR LAYOUT */
+
+/* Toggle Styles */
+
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+    padding-left: 250px;
+}
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: #000;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 250px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #999999;
+}
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: 65px;
+    font-size: 18px;
+    line-height: 60px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+    color: #999999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 250px;
+    }
+
+    #wrapper.toggled {
+        padding-left: 0;
+    }
+
+    #sidebar-wrapper {
+        width: 250px;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+
+    #page-content-wrapper {
+        padding: 20px;
+        position: relative;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+}
+
+
+/* OTHERS */
+body {
+  font-family: 'Josefin Slab', serif;
+  background: #efefef;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: 'Vast Shadow', cursive;
+}
+
+.millie-header h1 {
+  font-family: 'Vast Shadow', cursive;
+  text-transform: uppercase;
+  margin: 10px 0px;
+  padding: 0;
+  text-align: center;
+}
+
+.millie-header h1 span {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  font-size: 50%;
+  
+}
+
+.millie-header {
+  height: 60px;
+  z-index: 100;
+  background-color: #d4c56d;
+  border: 0;
+  border-radius: 0;
+  color: #fff;
+}
+
+.millie-header a {
+  color: #fff !Important;
+}
+
+#menu-toggle,
+.millie-header a.dropdown-toggle {
+    display: block;
+    width: 250px;
+    height: 60px;
+    text-align: center;
+    font-size: 20px;
+    padding-top: 16px;
+}
+
+
+#sidebar-wrapper {
+  margin-top: 10px;
+  color: #fff;
+  background:#333 ;
+}
+
+#page-content-wrapper {
+  padding-top: 35px !important;
+  
+}
+
+.sidebar-stat {
+    display: block;
+    font-size: 20px;
+    padding: 10px;
+    background-color: #000;
+    margin: 2px 0px;
+}
+
+/* room navigation buttons */
+
+.room-nav {
+  font-family: 'Vast Shadow', cursive;
+  display: block;
+  background: #999;
+  text-align: center;
+  padding: 5px;
+  color: #fff;
+}
+
+.room-nav a {
+  display: block;
+  padding: 20px;
+  border: 1px solid #fff;
+  color: #fff;
+  font-size: 19px;
+}
+
+.dropdown-menu > li > a {
+    color: #333333 !important;
+}
+
+
+.room-nav::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 30px;
+  background: #fff;
+  left: 50%;
+  right: 50%;
+  top: 79px; 
+}
+
+.room-nav.barcar {
+  background: #e2323b;
+}
+
+.room-nav.tattooparlor {
+  background: #eeaf7d;
+}
+
+.room-nav.maintent {
+  background: #503722;
+}
+
+/* story */
+
+.story-content {
+  display: block;
+  background: #fff;
+  padding: 20px;
+  margin-top: 25px;
+  font-size: 20px;
+}
+
+/* sidebar */
+
+.sidebar-photo {
+  
+  width: 250px;
+  height: 200px;
+  /*background-image: url(../img/beardedlady.png);*/
+  border-top: 0px #000 solid;
+}
