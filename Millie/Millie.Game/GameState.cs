@@ -31,12 +31,18 @@ namespace Millie.Game
         public bool AskAboutGoats { get; set; }
         public bool ApproachGoats { get; set; }
         public bool GaveCompliment { get; set; }
+        public bool GotShampoo { get; set; }
+
+
 
         // visited locations  
         public int CurrentRoomID { get; set; }
         public bool VisitedTattooRoom { get; set; }
         public bool VisitedBarCar { get; set; }
         public bool VisitedMainTent { get; set; }
+        public bool VisitedTrapezeRoom { get; set; }
+
+        public bool MadeFinalChoice { get; set; }
 
     }
 }

@@ -198,17 +198,22 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BarCarController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MainTentController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\TattooRoomController.cs" />
+    <Compile Include="Controllers\TrapezeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\GameStateStorage.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BarCarViewModel.cs" />
+    <Compile Include="Models\MainTentViewModel.cs" />
     <Compile Include="Models\PlayerChoiceViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\TattooRoomViewModel.cs" />
+    <Compile Include="Models\TrapezeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -274,6 +279,8 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\BarCar\Index.cshtml" />
     <Content Include="Views\TattooRoom\Index.cshtml" />
+    <Content Include="Views\MainTent\Index.cshtml" />
+    <Content Include="Views\Trapeze\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -6,26 +6,26 @@ using System.Web.Mvc;
 
 namespace Millie.Web.Controllers
 {
-    public class TattooRoomController : Controller
+    public class TrapezeController : Controller
     {
+        // GET: Trapeze
         public ActionResult Index()
         {
-
             // New up the game state and room
             Game.GameState gameState = Helpers.GameStateStorage.GetGameState(HttpContext);
-            Game.TattooRoom tattooRoom = new Game.TattooRoom();
+            Game.TrapezeRoom trapezeRoom = new Game.TrapezeRoom();
 
             // Build up a view model
-            var viewModel = new Models.TattooRoomViewModel();
-            viewModel.Description = tattooRoom.GetDescription(gameState);
+            var viewModel = new Models.TrapezeViewModel();
+            viewModel.Description = trapezeRoom.GetDescription(gameState);
 
             // Get the choices view model
-            List<Game.PlayerChoice> choices = tattooRoom.GetChoices(gameState);
-            foreach(Game.PlayerChoice choice in choices)
+            List<Game.PlayerChoice> choices = trapezeRoom.GetChoices(gameState);
+            foreach (Game.PlayerChoice choice in choices)
             {
                 // Convert the choice into a choice view model
                 var playerChoiceViewModel = new Models.PlayerChoiceViewModel(choice);
-                viewModel.Choices.Add(playerChoiceViewModel);                
+                viewModel.Choices.Add(playerChoiceViewModel);
             }
 
             // Return the view
@@ -35,11 +35,11 @@ namespace Millie.Web.Controllers
         public ActionResult ProcessChoice(int choiceId)
         {
             // Get the game state and the room
-            var tattooRoom = new Game.TattooRoom();
+            var trapezeRoom = new Game.TrapezeRoom();
             var gameState = Helpers.GameStateStorage.GetGameState(HttpContext);
 
             // Process the choice
-            var result = tattooRoom.ProcessChoice(gameState, choiceId);
+            var result = trapezeRoom.ProcessChoice(gameState, choiceId);
 
             // Store the game state back in cache
             Helpers.GameStateStorage.StoreGameState(HttpContext, gameState);

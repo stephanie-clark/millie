@@ -48,11 +48,14 @@ namespace Millie.Game
             var choices = new List<PlayerChoice>();
 
             // Compliment the lion tamer
+            if (!gameState.GaveCompliment)
+            { 
             var saySomethingNice = new PlayerChoice { Id = 1, Description = "Compliment the lion tamer" };
             choices.Add(saySomethingNice);
+            }
 
             // If you have complimented the lion tamer, you can ask about the lion's shampoo
-            if (gameState.GaveCompliment)
+            if (gameState.GaveCompliment && !gameState.GotShampoo)
             {
                 var askAboutShampoo = new PlayerChoice { Id = 2, Description = "Ask about the Lion's Shampoo" };
                 choices.Add(askAboutShampoo);
@@ -69,9 +72,10 @@ namespace Millie.Game
             if (gameState.AskAboutGoats)
             {
                 var approachGoats = new PlayerChoice { Id = 4, Description = "Go pet the goats!" };
+                choices.Add(approachGoats);
             }
 
-            throw new NotImplementedException();
+            return choices;
         }
 
         public override string ProcessChoice(GameState gameState, int choiceId)
@@ -86,6 +90,7 @@ namespace Millie.Game
             if (choiceId == 2)
             {
                 gameState.BeardLength++;
+                gameState.GotShampoo = true;
                 return "The lion tamer pulls a bottle from her pocket. 'Open your hands!' She puts some on your palm and you run it through your beard. Your beard grows!";
             }
 

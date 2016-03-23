@@ -26,5 +26,11 @@ namespace Millie.Web.Controllers
 
             return View();
         }
+
+        public ActionResult ResetGameState()
+        {
+            Helpers.GameStateStorage.ClearGameState(HttpContext);
+            return View("Index");
+        }
     }
 }

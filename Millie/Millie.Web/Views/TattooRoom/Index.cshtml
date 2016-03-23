@@ -7,13 +7,22 @@
 
 <h2>Tattoo Room</h2>
 
-Description:
-<p>@Model.Description</p>
+@if (ViewBag.ProcessChoiceResponse != null)
+{
+    <p>Response:</p>
+    <p>@ViewBag.ProcessChoiceResponse</p>
+}
+
+@if (ViewBag.ProcessChoiceResponse == null)
+{
+    <p>Description:</p>
+    <p>@Model.Description</p>
+}
 
 Choices:
 @foreach (var choice in Model.Choices)
 {
     <ul>
-        <li><a href="#">@choice.Description</a></li>
+        <li><a href="@Url.Action("ProcessChoice", new { choiceId = @choice.Id })">@choice.Description</a></li>
     </ul>
 }
