@@ -13,8 +13,17 @@ namespace Millie.Game
             BeardLength = 2;
         }
 
-        // character attributes 
-        public int BeardLength { get; set; }
+        // character attributes
+        private int _beardLength;
+        public int BeardLength
+        {
+            get { return _beardLength; }
+            set
+            {
+                if (value <= 5 && value >= 0)
+                    _beardLength = value;
+            }
+        }
         // TODO: Make sure beard length can't go above 5 or below 0. ALso starts at a 2.
        
         // BAR CAR EVENTS
@@ -36,8 +45,6 @@ namespace Millie.Game
         public bool ApproachGoats { get; set; }
         public bool GaveCompliment { get; set; }
         public bool GotShampoo { get; set; }
-
-
 
         // visited locations  
         public int CurrentRoomID { get; set; }

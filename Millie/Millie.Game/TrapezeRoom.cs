@@ -72,7 +72,24 @@ namespace Millie.Game
             if (choiceId == 1)
             {
                 gameState.MadeFinalChoice = true;
-                return "Congrats, you met them and they are lovely. You win! (NOTE TO SELF: MUST CHANGE OUTCOME BASED ON BEARD LENGTH, TATT and FLOWERS)";
+                var gameOver = "Game Over!";
+
+                if(gameState.BeardLength >= 4)
+                {
+                    return "Your beard is so long and beautiful! " + gameOver;
+                }
+
+                if (gameState.BeardLength >= 2)
+                {
+                    return "Your beard is pretty nice, but I wish it was longer! " + gameOver;
+                }
+
+                if (gameState.BeardLength >= 0)
+                {
+                    return "What happened to your beard??! " + gameOver;
+                }
+
+                return "GAME OVER!";
             }
 
             if (choiceId == 2)
