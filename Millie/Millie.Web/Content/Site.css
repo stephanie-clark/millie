@@ -234,7 +234,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 .room-nav a {
   display: block;
-  padding: 20px;
+  padding: 20px 10px;
   border: 1px solid #fff;
   color: #fff;
   font-size: 19px;
@@ -244,17 +244,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     color: #333333 !important;
 }
 
-
-.room-nav::before {
-  content: '';
-  position: absolute;
-  width: 2px;
-  height: 30px;
-  background: #fff;
-  left: 50%;
-  right: 50%;
-  top: 79px; 
-}
 
 .room-nav.barcar {
   background: #e2323b;
@@ -287,3 +276,67 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   /*background-image: url(../img/beardedlady.png);*/
   border-top: 0px #000 solid;
 }
+
+/* main menu, mobile */
+
+.navbar-default .navbar-toggle {
+    border-color: #fff;
+    margin-top: 12px;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
+.nav .caret {
+    border-top-color: #fff;
+    border-bottom-color: #fff;
+}
+
+/*==========  Non-Mobile First Method  ==========*/
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (max-width : 1200px) {
+        .room-nav {
+          padding: 5px;
+          margin-bottom: 5px;
+        }
+
+        .room-nav a {
+          padding: 5px;
+        }
+    }
+
+    /* Medium Devices, Desktops */
+    @media only screen and (max-width : 992px) {
+        
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (max-width : 768px) {
+        #menu-toggle, .millie-header a.dropdown-toggle {
+            width: 130px;
+            font-size: 15px;
+        }
+        .millie-header h1 {
+            font-size: 25px;
+            margin-top: 16px;
+        }
+
+        #menu-toggle, .millie-header a.dropdown-toggle {
+            width: 70px;
+            font-size: 15px;
+            padding-top: 11px;
+        }
+
+    }
+
+    /* Extra Small Devices, Phones */ 
+    @media only screen and (max-width : 480px) {
+        
+    }
+
+    /* Custom, iPhone Retina */ 
+    @media only screen and (max-width : 320px) {
+        
+    }

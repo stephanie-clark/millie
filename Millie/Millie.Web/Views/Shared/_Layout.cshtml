@@ -28,8 +28,11 @@
                 </div>
 
                 <div class="col-xs-8">
-                    <h1>
+                    <h1 class="hidden-md hidden-sm hidden-xs">
                         Millie <span>the</span> Bearded Lady
+                    </h1>
+                    <h1 class="hidden-lg">
+                        Millie
                     </h1>
                 </div>
 
@@ -106,22 +109,22 @@
             <!-- Start Room Navigation -->
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-3">
+                    <div class="col-lg-3 col-md-6">
                         <div class="room-nav barcar">
                             @Html.ActionLink("Bar Car", "Index", "BarCar")
                         </div>
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-lg-3 col-md-6">
                         <div class="room-nav tattooparlor">
                             @Html.ActionLink("Tattoo Room", "Index", "TattooRoom")
                         </div>
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-lg-3 col-md-6">
                         <div class="room-nav maintent">
                             @Html.ActionLink("Main Tent", "Index", "MainTent")
                         </div>
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-lg-3 col-md-6">
                         <div class="room-nav final">
                             @Html.ActionLink("The Trapeze", "Index", "Trapeze")
                         </div>
