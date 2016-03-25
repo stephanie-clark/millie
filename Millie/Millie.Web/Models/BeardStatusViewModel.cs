@@ -8,5 +8,6 @@ namespace Millie.Web.Models
     public class BeardStatusViewModel
     {
         public int BeardLength { get; set; }
+
     }
 }

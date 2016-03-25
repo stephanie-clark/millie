@@ -32,11 +32,6 @@ namespace Millie.Game
                     return "You're too drunk to talk to. Here, drink this elixer. You'll feel better. " + TrapezeRoomDescription;
                 }
 
-                // if Millie has visited already
-                if (hasPreviouslyVisited)
-                {
-                    return TrapezeRoomDescription + "Welcome back!";
-                }
 
                 // if Millie has not visited all three rooms yet
                 if (!gameState.VisitedMainTent || !gameState.VisitedTattooRoom || !gameState.VisitedBarCar)
@@ -44,7 +39,7 @@ namespace Millie.Game
                     return TrapezeRoomDescription + "No one is here. you're too early. Go visit some more friends.";
                 }
 
-                return TrapezeRoomDescription + "This is your first time here.";
+                return TrapezeRoomDescription;
             }
         }
 
