@@ -29,7 +29,7 @@ namespace Millie.Game
             }
 
             // if Millie has visited the Bar Car and HAS picked up the flowers already
-            if(hasPreviouslyVisited && gameState.HasFlowers )
+            else if(hasPreviouslyVisited && gameState.HasFlowers )
             {
                 return barCarDescription + "Welcome back! THe flowers are gone.";
             }
@@ -45,7 +45,7 @@ namespace Millie.Game
             var choices = new List<PlayerChoice>();
 
             // Ask the Strongman about the flowers (if you don't already have them)
-            if (gameState.AskedAboutFlowers == false)
+            if (!gameState.AskedAboutFlowers)
             {
                 var talkChoice = new PlayerChoice { Id = 1, Description = "Talk to the strongman about the flowers" };
                 choices.Add(talkChoice);
@@ -90,29 +90,31 @@ namespace Millie.Game
             // Process talking to the strongman about the flowers
             if (choiceId == 1)
             {
-                // Note that you'va asked about the flowers
-                gameState.AskedAboutFlowers = true;
 
                 var explainFlowers = "These flowers are from my girlfriend. We got into a fight and she's trying to say sorry. She's a magician though man. She can make flowers appear out of thin air. It kinda looses it's romanticness after a while.";
 
                 if (gameState.ApproachGoats && gameState.GotTattoo)
                 {
+                    gameState.AskedAboutFlowers = true;
                     return "You smell like goats... but I like your tattoo!" + explainFlowers;
                 }
 
                 // If you have a tattoo - he likes it
                 if (gameState.GotTattoo)
                 {
+                    gameState.AskedAboutFlowers = true;
                     return "Wow, cool tattoo! " + explainFlowers;
                 }
 
                 // If you have been near the goats, you smell bad
                 if (gameState.ApproachGoats)
                 {
+                    gameState.AskedAboutFlowers = true;
                     return "You smell like goats. " + explainFlowers;
                 }
 
                 // Otherwise he just says hello
+                gameState.AskedAboutFlowers = true;
                 return explainFlowers;
             }
 

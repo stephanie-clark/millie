@@ -1,0 +1,64 @@
+﻿@model Millie.Web.Models.BeardStatusViewModel
+
+
+<div class="sidebar-photo">
+
+    <!--<img src="~/Content/images/millie-tattneck.png" class="portrait-layers" />-->
+    
+    @if (Model.BeardLength == 5)
+    {
+        <img src="~/Content/images/millie-05.png" class="portrait-layers" />
+    }
+    else if (Model.BeardLength == 4)
+    {
+        <img src="~/Content/images/millie-04.png" class="portrait-layers" />
+    }
+    else if (Model.BeardLength == 3)
+    {
+        <img src="~/Content/images/millie-03.png" class="portrait-layers" />
+    }
+    else if (Model.BeardLength == 2)
+    {
+        <img src="~/Content/images/millie-02.png" class="portrait-layers" />
+    }
+    else if (Model.BeardLength == 1)
+    {
+        <img src="~/Content/images/millie-01.png" class="portrait-layers" />
+    }
+    
+    <!--<img src="~/Content/images/millie-flower.png" class="portrait-layers" />-->
+    <!--<img src="~/Content/images/millie-tattarm.png" class="portrait-layers" />-->
+</div>
+
+<div class="sidebar-stat">
+    @if (Model.BeardLength == 5)
+    {
+        <p>Beard Length: 12 inches</p>
+    }
+    else if (Model.BeardLength == 4)
+    {
+        <p>Beard Length: 9 inches</p>
+    }
+    else if (Model.BeardLength == 3)
+    {
+        <p>Beard Length: 6 inches</p>
+    }
+    else if (Model.BeardLength == 2)
+    {
+        <p>Beard Length: 3 inches</p>
+    }
+    else if (Model.BeardLength == 1)
+    {
+        <p>Beard Length: Stubble</p>
+    }
+    else if (Model.BeardLength == 0)
+    {
+        <p>Beard Length: 0 inches</p>
+    }
+</div>
+<div class="sidebar-stat">
+    <p>Inventory:</p>
+    
+</div>
+
+

@@ -8,9 +8,22 @@ namespace Millie.Game
 {
     public class GameState
     {
-     
-        // character attributes 
-        public int BeardLength { get; set; }
+        public GameState()
+        {
+            BeardLength = 2;
+        }
+
+        // character attributes
+        private int _beardLength;
+        public int BeardLength
+        {
+            get { return _beardLength; }
+            set
+            {
+                if (value <= 5 && value >= 0)
+                    _beardLength = value;
+            }
+        }
         // TODO: Make sure beard length can't go above 5 or below 0. ALso starts at a 2.
        
         // BAR CAR EVENTS
@@ -31,12 +44,16 @@ namespace Millie.Game
         public bool AskAboutGoats { get; set; }
         public bool ApproachGoats { get; set; }
         public bool GaveCompliment { get; set; }
+        public bool GotShampoo { get; set; }
 
         // visited locations  
         public int CurrentRoomID { get; set; }
         public bool VisitedTattooRoom { get; set; }
         public bool VisitedBarCar { get; set; }
         public bool VisitedMainTent { get; set; }
+        public bool VisitedTrapezeRoom { get; set; }
+
+        public bool MadeFinalChoice { get; set; }
 
     }
 }
