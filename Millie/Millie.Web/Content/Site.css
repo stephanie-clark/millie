@@ -192,7 +192,8 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 #menu-toggle,
-.millie-header a.dropdown-toggle {
+.millie-header a.dropdown-toggle,
+.millie-header .reset a {
     display: block;
     width: 250px;
     height: 60px;
