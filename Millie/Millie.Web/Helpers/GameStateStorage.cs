@@ -5,13 +5,13 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Configuration;
 
 namespace Millie.Web.Helpers
 {
     public static class GameStateStorage
     {
-        private static string ConnectionString =
-            @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\szuro\Dropbox\Development\gihub\millie\Millie\Millie.Web\App_Data\Database.mdf;Integrated Security=True";
+        private static string ConnectionString = ConfigurationManager.ConnectionStrings["MillieConnection"].ConnectionString;
 
         public static Game.GameState GetGameState()
         {
